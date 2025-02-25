@@ -3,6 +3,7 @@ use clap::{error::Result, ArgAction, Parser, Subcommand};
 use std::path::PathBuf;
 
 /// Default log level
+///
 /// 2 corresponds to the level INFO
 const DEFAULT_LOG_LEVEL: usize = 2;
 
