@@ -1,3 +1,8 @@
+mod cli;
+
+use cli::CLI;
+use clap::Parser;
+
 fn main() {
-    println!("Hello, world!");
+    CLI::parse().call(module_path!())
 }
