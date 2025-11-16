@@ -109,7 +109,7 @@ This tool is used by
 [nixos-anywhere](https://github.com/numtide/nixos-anywhere), which carries out a
 fully-automated remote install of NixOS.
 
-We also acknowledge https://github.com/NixOS/nixpart, the conceptual ancestor of
+We also acknowledge [nixpart](https://github.com/NixOS/nixpart), the conceptual ancestor of
 this project.
 
 ## Licensing and Contribution details

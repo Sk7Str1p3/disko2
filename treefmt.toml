@@ -9,3 +9,7 @@ includes = ["*.nix"]
 [formatter.shellcheck]
 command = "shellcheck"
 includes = ["*.sh"]
+
+[formatter.rust]
+command = "rustfmt"
+includes = ["*.rs"]
