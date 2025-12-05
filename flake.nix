@@ -133,12 +133,19 @@
           ];
         }
       );
-      devShells = forAllSystems (system: {
-        default = nixpkgs.legacyPackages.${system}.mkShell {
-          packages = [
-            self.formatter.${system}
-          ];
-        };
-      });
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system}.appendOverlays [ (import rust-overlay) ];
+        in
+        {
+          default = nixpkgs.legacyPackages.${system}.mkShell {
+            packages = [
+              self.formatter.${system}
+              (pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml)
+            ];
+          };
+        }
+      );
     };
 }
