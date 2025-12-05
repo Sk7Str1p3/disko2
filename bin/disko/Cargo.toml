@@ -1,0 +1,8 @@
+[package]
+name = "disko"
+edition.workspace = true
+description.workspace = true
+license.workspace = true
+version.workspace = true
+
+[dependencies]
