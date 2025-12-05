@@ -1,15 +1,15 @@
 [formatting]
-# General
-reorder_keys = true
+  # General
+  reorder_keys = true
 
-# Arrays
-array_auto_collapse = false
-compact_arrays = false
-reorder_arrays = true
+  # Arrays
+  array_auto_collapse = false
+  compact_arrays      = false
+  reorder_arrays      = true
 
-# Tables
-align_entries = true
-indent_entries = true
-indent_tables = true
-inline_table_expand = true
-reorder_inline_tables = true
+  # Tables
+  align_entries         = true
+  indent_entries        = true
+  indent_tables         = true
+  inline_table_expand   = true
+  reorder_inline_tables = true
