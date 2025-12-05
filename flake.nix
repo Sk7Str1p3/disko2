@@ -5,9 +5,18 @@
   # but garnix currently does not allow this.
   #inputs.nixpkgs.url = "nixpkgs";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs.rust-overlay = {
+    url = "github:oxalica/rust-overlay";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 
   outputs =
-    { self, nixpkgs, ... }:
+    {
+      self,
+      nixpkgs,
+      rust-overlay,
+      ...
+    }:
     let
       lib = nixpkgs.lib;
       supportedSystems = [
@@ -109,7 +118,7 @@
       formatter = forAllSystems (
         system:
         let
-          pkgs = nixpkgs.legacyPackages.${system};
+          pkgs = nixpkgs.legacyPackages.${system}.appendOverlays [ (import rust-overlay) ];
         in
         pkgs.writeShellApplication {
           name = "treefmt";
@@ -119,6 +128,8 @@
             pkgs.nixfmt-rfc-style
             pkgs.shellcheck
             pkgs.treefmt
+            (pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml)
+            pkgs.taplo
           ];
         }
       );
