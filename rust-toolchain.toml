@@ -1,0 +1,11 @@
+[toolchain]
+channel = "nightly" # Pinned with nix
+components = [
+  "cargo",
+  "clippy",
+  "rust-analyzer",
+  "rust-src",
+  "rust-std",
+  "rustc",
+  "rustfmt",
+]
