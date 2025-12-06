@@ -1,0 +1,14 @@
+[workspace]
+  members  = [ "bin/disko", "bin/disko-install", "lib" ]
+  resolver = "3"
+
+  [workspace.package]
+    description = "Declarative disk partitioning tool"
+    edition     = "2024"
+    license     = "MIT"
+    version     = "2.0.0"
+
+[profile.release]
+  incremental = true
+  lto         = "fat"
+  strip       = true

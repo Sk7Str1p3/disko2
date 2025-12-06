@@ -1,11 +1,20 @@
 [formatter.nix]
-command = "nixfmt"
-includes = ["*.nix"]
+  command  = "nixfmt"
+  includes = [ "*.nix" ]
 
 [formatter.deadnix]
-command = "deadnix"
-includes = ["*.nix"]
+  command  = "deadnix"
+  includes = [ "*.nix" ]
 
 [formatter.shellcheck]
-command = "shellcheck"
-includes = ["*.sh"]
+  command  = "shellcheck"
+  includes = [ "*.sh" ]
+
+[formatter.rust]
+  command  = "rustfmt"
+  includes = [ "*.rs" ]
+
+[formatter.taplo]
+  command  = "taplo"
+  includes = [ "*.toml" ]
+  options  = [ "fmt" ]
