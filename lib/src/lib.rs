@@ -1,3 +1,10 @@
+#[doc(hidden)]
+pub mod private {
+    //! Modules that are intended to be used only inside
+    //! `disko` crates
+    pub mod eyre;
+}
+
 pub fn add(
     left: u64,
     right: u64
