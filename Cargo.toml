@@ -16,4 +16,3 @@
 [profile.release]
   incremental = true
   lto         = "fat"
-  strip       = true
