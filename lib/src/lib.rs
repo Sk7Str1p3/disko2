@@ -2,6 +2,7 @@
 pub mod private {
     //! Modules that are intended to be used only inside
     //! `disko` crates
+    pub mod eyre;
 }
 
 pub fn add(
