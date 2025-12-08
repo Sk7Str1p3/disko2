@@ -87,3 +87,11 @@ mod panic {
         }
     }
 }
+
+/// Install error and panic hooks
+pub fn install() -> color_eyre::Result<()> {
+    color_eyre::config::HookBuilder::blank()
+        .panic_message(panic::PanicReport)
+        .display_env_section(false)
+        .install()
+}
