@@ -10,3 +10,5 @@
   console              = "0.16.1"
   human-panic          = "2.0.4"
   owo-colors.workspace = true
+  tracing.workspace    = true
+  tracing-subscriber   = "0.3.22"
